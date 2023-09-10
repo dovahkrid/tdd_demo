@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TDD Demo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="activate_phone_hint_register">Please select the country and enter your phone number.</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="action_next">Next</string>
+</resources>
