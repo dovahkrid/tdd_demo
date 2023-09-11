@@ -1,10 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
-    id("com.google.dagger.hilt.android")
 }
-//apply("flavor.gradle")
 
 android {
     namespace = "com.example.tdddemo"
@@ -32,19 +29,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-
-//        sourceCompatibility = JavaVersion.VERSION_1_8
-//        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-//        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = "17"
     }
-}
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
 }
 
 dependencies {
@@ -66,12 +54,6 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation("com.hbb20:ccp:2.7.0")
 
-    //okhttp3 logging
-    implementation("com.squareup.okhttp3:logging-interceptor:4.2.1")
-
-    //hilt
-    implementation("com.google.dagger:hilt-android:2.42")
-    kapt("com.google.dagger:hilt-android-compiler:2.42")
 
     testImplementation("junit:junit:4.13.2")
     testImplementation ("org.mockito.kotlin:mockito-kotlin:5.1.0")

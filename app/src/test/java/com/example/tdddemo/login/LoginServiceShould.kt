@@ -1,10 +1,9 @@
 package com.example.tdddemo.login
 
-import com.example.tdddemo.network.LoginAPI
-import com.example.tdddemo.service.LoginService
 import com.example.tdddemo.utils.BaseUnitTest
 import junit.framework.TestCase
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.mockito.Mockito.mock
