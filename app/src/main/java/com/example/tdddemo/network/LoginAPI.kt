@@ -1,6 +1,6 @@
-package com.example.tdddemo.login
+package com.example.tdddemo.network
 
-import kotlinx.coroutines.flow.Flow
+import com.example.tdddemo.login.LoginResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST

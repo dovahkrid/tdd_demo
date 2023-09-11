@@ -2,6 +2,7 @@ package com.example.tdddemo.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.tdddemo.repository.LoginRepository
 
 class LoginViewModelFactory(
     private val repository: LoginRepository
