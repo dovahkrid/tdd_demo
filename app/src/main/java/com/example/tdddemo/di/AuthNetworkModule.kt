@@ -38,7 +38,7 @@ class AuthNetworkModule {
     fun provideLoginAPI(@Named("LoginOkHttpClient") okHttpClient: OkHttpClient): LoginAPI {
         return Retrofit.Builder()
 //            .baseUrl(BuildConfig.DOMAIN_API_AUTH)
-            .baseUrl("https://messagingtest.mycurrentmessenger.com:8080/")
+            .baseUrl("")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
