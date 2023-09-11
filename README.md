@@ -22,11 +22,16 @@ This is the demo for Test-Driven Development. This demo will be updated continuo
 - Feature Test: ```LoginFeature.kt``` (in folder app/src/androidTest/java/com/example/tdddemo/)
 This is the file contain feature tests, and also the future UI tests. For now, we will run test in here to know which unit test step we're currently in.
 - Unit Test: ```LoginServiceShould.kt```, ```LoginRepositoryShould.kt```, ```LoginViewModelShould.kt``` (in folder app/src/test/java/com/example/tdddemo/login/)
-These are the unit tests of respectively ```LoginServiceShould```, ```LoginRepositoryShould```, ```LoginViewModelShould```
+These are the unit tests of respectively ```LoginService```, ```LoginRepository```, ```LoginViewModel```
 
 ### The flow of Login Feature
 
-Add the image later
+![The Data and Test Flow](https://github.com/dovahkrid/tdd_demo/blob/master/Drawing.png)
+
+Each of the component will have their own unit test. The different is the latter component depends on the former (for example, ```LoginViewModel``` needs the ```LoginRepository```). But in the unit test, they can't depend on each other. We use ```mock``` to simulate the dependencies, ensuring the isolation of component.
+
+### In the Unit Test
+
 
 Each component has 3 unit tests: The intergration test, the "successfull" test and the "error" test. For example, the repository test in ```LoginRepositoryShould```:
 
