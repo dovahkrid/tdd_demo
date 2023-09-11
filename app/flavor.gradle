@@ -1,0 +1,20 @@
+android {
+    defaultConfig {
+        // ConnectTimeout
+        buildConfigField "Integer", "CONNECT_TIMEOUT", "30000"
+        // ReadTimeoutsession
+        buildConfigField "String", "TIME_SESSION", "\"1800000\""
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "DOMAIN_API_AUTH", ""
+        }
+        uat {
+            buildConfigField "String", "DOMAIN_API_AUTH", ""
+        }
+        prod {
+            buildConfigField "String", "DOMAIN_API_AUTH", ""
+        }
+    }
+}

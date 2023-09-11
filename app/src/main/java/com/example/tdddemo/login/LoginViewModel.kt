@@ -1,10 +1,11 @@
 package com.example.tdddemo.login
 
-import androidx.lifecycle.MutableLiveData
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
+import com.example.tdddemo.repository.LoginRepository
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
@@ -15,4 +16,9 @@ class LoginViewModel(
         emitSource(repository.login("84", "838613616").asLiveData())
     }
 
+    fun login(){
+        viewModelScope.launch {
+            val loginRes =  repository.login("","")
+        }
+    }
 }
