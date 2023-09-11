@@ -16,7 +16,15 @@ This is the demo for Test-Driven Development. This demo will be updated continuo
 3.  **Add More Business Logic and Test**: As the application evolves, we intend to integrate more intricate business logic. Each new addition will strictly adhere to the TDD principles, ensuring that tests are written and passed before the feature's implementation.
 4.  **Restructure Files Based on Clean Architecture**: To further maintain scalability and readability, we'll be restructuring the project following the Clean Architecture guidelines. This will ensure that our application remains modular, adaptable, and maintainable as it grows.
 
-## The flow of Login Feature
+## Current State
+
+### Test
+- Feature Test: ```LoginFeature.kt``` (in folder app/src/androidTest/java/com/example/tdddemo/)
+This is the file contain feature tests, and also the future UI tests. For now, we will run test in here to know which unit test step we're currently in.
+- Unit Test: ```LoginServiceShould.kt```, ```LoginRepositoryShould.kt```, ```LoginViewModelShould.kt``` (in folder app/src/test/java/com/example/tdddemo/login/)
+These are the unit tests of respectively ```LoginServiceShould```, ```LoginRepositoryShould```, ```LoginViewModelShould```
+
+### The flow of Login Feature
 
 Add the image later
 
