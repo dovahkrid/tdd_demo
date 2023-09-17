@@ -9,23 +9,19 @@ import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.example.tdddemo.R
+import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     lateinit var viewModel: LoginViewModel
+
+    @Inject
     lateinit var viewModelFactory: LoginViewModelFactory
-    private val retrofit = Retrofit.Builder()
-        .baseUrl("base_url")
-        .client(OkHttpClient())
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    private val loginAPI = retrofit.create(LoginAPI::class.java)
-    private val service: LoginService = LoginService(loginAPI)
-    private val repository: LoginRepository = LoginRepository(service)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -42,7 +38,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun setupViewModel() {
-        viewModelFactory = LoginViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[LoginViewModel::class.java]
     }
 

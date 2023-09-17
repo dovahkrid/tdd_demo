@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -53,6 +55,8 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation("com.hbb20:ccp:2.7.0")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
 
 
     testImplementation("junit:junit:4.13.2")
@@ -73,4 +77,8 @@ dependencies {
         exclude(group = "org.jetbrains.kotlin") // Only if you already use Kotlin in your project
     }
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+}
+
+kapt {
+    correctErrorTypes = true
 }
