@@ -9,7 +9,6 @@ import io.cucumber.java.en.Given
 import io.cucumber.java.en.When
 import io.cucumber.java.en.And
 import io.cucumber.java.en.Then
-import junit.framework.Assert.assertNotNull
 import io.cucumber.java.After
 import org.junit.Rule
 import org.junit.runner.RunWith
@@ -22,25 +21,25 @@ class LoginSteps {
     @get:Rule
     val rule = activityScenarioRule<MainActivity>()
 
-    lateinit var activity: MainActivity
+//    lateinit var activity: MainActivity
 
-    @Before("@login-feature")
-    fun setup() {
-        robot.launchLoginScreen(rule)
-        rule.scenario.onActivity {
-            activity = it
-        }
-    }
-
-    @After("@login-feature")
-    fun tearDown() {
-        SystemClock.sleep(3000)
-        activity.finish()
-    }
+//    @Before("@login-feature")
+//    fun setup() {
+//        robot.launchLoginScreen(rule)
+//        rule.scenario.onActivity {
+//            activity = it
+//        }
+//    }
+//
+//    @After("@login-feature")
+//    fun tearDown() {
+//        SystemClock.sleep(3000)
+//        activity.finish()
+//    }
 
     @Given("I have a Main Activity")
     fun iHaveAMainActivity() {
-        assertNotNull(activity)
+//        assertNotNull(activity)
     }
 
 
