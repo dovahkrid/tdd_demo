@@ -16,7 +16,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "com.example.tdddemo.LoginRunner"
+        testInstrumentationRunner = "com.example.tdddemo.test.LoginRunner"
 
     }
 
