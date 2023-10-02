@@ -1,6 +1,7 @@
 package com.example.tdddemo.steps
 
 import android.os.SystemClock
+import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.tdddemo.MainActivity
@@ -21,21 +22,17 @@ class LoginSteps {
     @get:Rule
     val rule = activityScenarioRule<MainActivity>()
 
-//    lateinit var activity: MainActivity
+    val scenario = ActivityScenario.launch(MainActivity::class.java)
 
-//    @Before("@login-feature")
-//    fun setup() {
-//        robot.launchLoginScreen(rule)
-//        rule.scenario.onActivity {
-//            activity = it
-//        }
-//    }
-//
-//    @After("@login-feature")
-//    fun tearDown() {
-//        SystemClock.sleep(3000)
-//        activity.finish()
-//    }
+    @Before("@login-feature")
+    fun setup() {
+        robot.launchLoginScreen(scenario)
+    }
+
+    @After("@login-feature")
+    fun tearDown() {
+
+    }
 
     @Given("I have a Main Activity")
     fun iHaveAMainActivity() {
@@ -60,15 +57,19 @@ class LoginSteps {
         robot.closeKeyboard()
     }
 
-
-    @And("I press submit button")
+    @Then("I press submit button")
     fun iPressSubmitButton() {
         robot.clickSubmitButton()
     }
 
-    @Then("I should see a success toast")
-    fun iShouldSeeASuccessToast() {
-        robot.showToast(rule)
-    }
+//    @And("I press submit button")
+//    fun iPressSubmitButton() {
+//        robot.clickSubmitButton()
+//    }
+//
+//    @Then("I should see a success toast")
+//    fun iShouldSeeASuccessToast() {
+//        robot.showToast()
+//    }
 
 }

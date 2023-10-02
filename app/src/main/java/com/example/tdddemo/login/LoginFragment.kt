@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.example.tdddemo.R
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -34,7 +37,15 @@ class LoginFragment : Fragment() {
             else
                 Log.d("LoginFragment", "response: $response")
         }
+        setUpView(view)
         return view
+    }
+
+    private fun setUpView(view: View){
+        (view.findViewById<MaterialButton>(R.id.btn_submit)).setOnClickListener {
+            Toast.makeText(requireContext(), "Success", Toast.LENGTH_LONG).show()
+            Snackbar.make(view, "Success", Snackbar.LENGTH_LONG).show()
+        }
     }
 
     private fun setupViewModel() {
